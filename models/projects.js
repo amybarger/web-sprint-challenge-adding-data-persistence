@@ -4,15 +4,19 @@ function find() {
   return db("project");
 }
 
-async function create(id, changes) {
-  await db("project")
-    .where({ id })
-    .update(changes);
-
-  return findById(id);
+function create(project) {
+  return db("project")
+    .insert(project, "id")
+    .then(([id]) => getProjectsById(id));
+}
+function getProjectsById(id) {
+  return db("project")
+    .where("project.id", id)
+    .first();
 }
 
 module.exports = {
   find,
-  create
+  create,
+  getProjectsById
 };

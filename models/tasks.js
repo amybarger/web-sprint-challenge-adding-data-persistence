@@ -6,15 +6,18 @@ function find() {
     .select("t.id", "t.task", "t.description", "p.name", "p.description");
 }
 
-async function create(id, changes) {
-  await db("tasks")
-    .where({ id })
-    .update(changes);
-
-  return findById(id);
+function create(task) {
+  return db("tasks")
+    .insert(task, "id")
+    .then(([id]) => getTasksById(id));
 }
-
+function getTasksById(id) {
+  return db("tasks")
+    .where("tasks.id", id)
+    .first();
+}
 module.exports = {
   find,
-  create
+  create,
+  getTasksById
 };
