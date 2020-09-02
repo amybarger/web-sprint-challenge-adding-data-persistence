@@ -1,13 +1,22 @@
 exports.seed = async function(knex) {
   await knex("projects").insert([
     {
-      project: "Make a calendar"
+      id: 1,
+      name: "Make a calendar",
+      description: "Make this calendar so you can start planning wisely.",
+      project_complete: false
     },
     {
-      project: "Paint a whale"
+      id: 2,
+      name: "Paint a whale",
+      description: "You need a creative hobby, start by painting a whale",
+      project_complete: false
     },
     {
-      project: "Start a podcast"
+      id: 3,
+      name: "Start a podcast",
+      description: "Starting a podcast will help you meet people.",
+      project_complete: false
     }
   ]);
 };

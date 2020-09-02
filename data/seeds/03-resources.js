@@ -1,31 +1,59 @@
 exports.seed = async function(knex) {
   await knex("resources").insert([
     {
-      resource: "marker"
+      id: 1,
+      description: "marker",
+      notes: "Get the Sharpie brand.",
+      task_complete: "false"
     },
     {
-      resource: "paper"
+      id: 2,
+      description: "paper",
+      notes: "Get a card stock type.",
+      task_complete: "false"
     },
     {
-      resource: "stapler"
+      id: 3,
+      description: "stapler",
+      notes: "This will help bind things.",
+      task_complete: "false"
     },
     {
-      resource: "blank canvas"
+      id: 4,
+      description: "blank canvas",
+      notes: "Make sure to get this at Art Supply, Co.",
+      task_complete: "false"
     },
     {
-      resource: "paint"
+      id: 5,
+      description: "paint",
+      notes: "Make sure to get this at Art Supply, Co.",
+      task_complete: "false"
     },
     {
-      resource: "pallette"
+      id: 6,
+      description: "pallette",
+      notes: "Make sure to get this at Art Supply, Co.",
+      task_complete: "false"
     },
     {
-      resource: "headphones"
+      id: 7,
+      description: "headphones",
+      notes: "Check out headphones at Best Buy",
+      task_complete: "false"
     },
     {
-      resource: "microphone"
+      id: 8,
+      description: "microphone",
+      notes: "Go to Music Co. to find best mic.",
+      task_complete: "false"
     },
     {
-      resource: "address book"
+      id: 9,
+      description: "address book",
+      notes:
+        "Keep track of contacts to help get to know people and for the podcast.",
+      task_complete: "false"
     }
   ]);
 };
