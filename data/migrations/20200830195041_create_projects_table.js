@@ -6,10 +6,14 @@ exports.up = async function(knex) {
       .unique()
       .primary();
     table
-      .text("project")
+      .text("name")
       .notNull()
       .unique();
     table.text("description");
+    table
+      .boolean("project_complete")
+      .notNull()
+      .defaultValue("false");
   });
 };
 
