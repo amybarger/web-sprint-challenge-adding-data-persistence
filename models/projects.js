@@ -1,18 +1,18 @@
 const db = require("../data/config");
 
 function find() {
-    return db("project")
+  return db("project");
 }
 
-function create(id, changes) {
-    await db("project")
+async function create(id, changes) {
+  await db("project")
     .where({ id })
-    .update(changes)
+    .update(changes);
 
-    return findById(id)
+  return findById(id);
 }
 
 module.exports = {
-    find,
-    create
-}
+  find,
+  create
+};

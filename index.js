@@ -1,11 +1,11 @@
 const express = require("express");
-// const carsRouter = require("./cars/cars-router");
+const projectRouter = require("./routers/project");
 
 const server = express();
 const port = process.env.PORT || 5050;
 
 server.use(express.json());
-// server.use(carsRouter);
+server.use(projectRouter);
 
 server.use((err, req, res, next) => {
   console.log(err);
